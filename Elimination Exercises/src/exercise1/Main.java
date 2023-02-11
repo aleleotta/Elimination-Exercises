@@ -12,7 +12,13 @@ public class Main {
 		}
 		System.out.println(Arrays.toString(array));
 		int index = 0;
-		Functions.deleteArrayOdds(array, index);
+		for(int value: array) {
+			if(!Functions.even(value)) {
+				System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+				//array = Arrays.copyOf(array, array.length - 1);
+			}
+			index++;
+		}
 		System.out.println("\nNew array: ");
 		System.out.println(Arrays.toString(array));
 		sc.close();
