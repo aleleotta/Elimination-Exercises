@@ -8,6 +8,16 @@ public class Functions {
 		}
 		return check;
 	}
+	
+	public static void deleteArrayOdds(int[] array, int index) {
+		for(int value: array) {
+			if(!Functions.even(value)) {
+				System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+				//array = Arrays.copyOf(array, array.length - 1);
+			}
+			index++;
+		}
+	}
 }
 /*
  * Escribe un programa que genere 20 números enteros aleatorios entre 0 y 100 y que los almacene en un array.
