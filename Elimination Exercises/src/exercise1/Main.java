@@ -11,15 +11,15 @@ public class Main {
 			array[index] = (int) (Math.random() * 100);
 		}
 		System.out.println(Arrays.toString(array));
-		int index = 0;
 		for(int value: array) {
 			if(!Functions.even(value)) {
-				System.arraycopy(array, index + 1, array, index, array.length - index - 1);
-				//array = Arrays.copyOf(array, array.length - 1);
+				int index = 0;
+					System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+					array = Arrays.copyOf(array, array.length - 1);
+					index++;
 			}
-			index++;
 		}
-		System.out.println("\nNew array: ");
+		System.out.println("\nNew array without odds: ");
 		System.out.println(Arrays.toString(array));
 		sc.close();
 	}
@@ -29,3 +29,13 @@ public class Main {
  * El programa debe eliminar todos los números impares.
  * Hacer sin (Arrays.sort).
 */
+
+/*System.arraycopy(
+  Which array would you like to copy?,
+  Which index to start copying from?,
+  Which array to paste elements into?,
+  Which index to start pasting into?,
+  How many elements should be copied?)*/
+
+//System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+//array = Arrays.copyOf(array, array.length - 1);
