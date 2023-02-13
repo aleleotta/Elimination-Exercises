@@ -4,11 +4,19 @@ import java.util.Arrays;
 
 public class Functions {
 	public static int[] eliminateValue(int[] array, int input) {
+		int counter = 0;
+		for(int value: array) {
+			if(value == input) {
+				counter++;
+			}
+		}
 		for(int index = 0; index < array.length; index++) {
 			int value = array[index];
-			if(index >= 0 && value == input) {
-				System.arraycopy(array, index + 1, array, index, array.length - index - 1);
-				array = Arrays.copyOf(array, array.length - 1);
+			for(int i = 0; i < counter; i++) {
+				if(index >= 0 && value == input) {
+					System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+					array = Arrays.copyOf(array, array.length - 1);
+				}
 			}
 		}
 		return array;

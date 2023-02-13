@@ -9,11 +9,12 @@ public class Main {
 		String option = "A";
 		int value;
 		Scanner sc = new Scanner(System.in);
+		System.out.println("\nHere is the current array that has been generated.");
 		for(int index = 0; index < array.length; index++) {
 			array[index] = (int) (Math.random() * 100);
 		}
 		Arrays.sort(array);
-		System.out.print("Array: " + Arrays.toString(array));
+		System.out.print("\nArray: " + Arrays.toString(array));
 		boolean termination = false;
 		while (!termination) {
 			System.out.print("\n\nOptions:\n"
@@ -29,7 +30,9 @@ public class Main {
 			case "b", "B": //To eliminate certain value selected by the user.
 				System.out.print("Introduce a value that you would like to eliminate from the array: ");
 				value = sc.nextInt();
+				System.out.println();
 				array = Functions.eliminateValue(array, value);
+				System.out.print("New array: " + Arrays.toString(array));
 				break;
 			case "c","C": 
 				termination=true;
