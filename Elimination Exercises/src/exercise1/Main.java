@@ -1,27 +1,23 @@
 package exercise1;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		int array[] = new int[20];
-		Scanner sc = new Scanner(System.in);
 		for(int index = 0; index < array.length; index++) {
 			array[index] = (int) (Math.random() * 100);
 		}
 		System.out.println(Arrays.toString(array));
-		for(int value: array) {
-			if(!Functions.even(value)) {
-				int index = 0;
+		for(int index = 0; index < array.length; index++) {
+			int value = array[index];
+			if(!exercise1.Functions.even(value)) {
 					System.arraycopy(array, index + 1, array, index, array.length - index - 1);
 					array = Arrays.copyOf(array, array.length - 1);
-					index++;
 			}
 		}
 		System.out.println("\nNew array without odds: ");
 		System.out.println(Arrays.toString(array));
-		sc.close();
 	}
 }
 /*
