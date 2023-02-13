@@ -8,6 +8,7 @@ public class Main {
 		int array[] = new int[10];
 		Scanner sc = new Scanner(System.in);
 		for(int index = 0; index < array.length; index++) {
+			System.out.print("Introduce a number: ");
 			array[index] = sc.nextInt();
 		}
 		for(int index = 0; index < array.length; index++) {
@@ -17,8 +18,7 @@ public class Main {
 					array = Arrays.copyOf(array, array.length - 1);
 			}
 		}
-		System.out.println("\nNew array without odds: ");
-		System.out.println(Arrays.toString(array));
+		System.out.println("\nNew array with only primes: ");
 		System.out.println(Arrays.toString(array));
 		sc.close();
 	}
