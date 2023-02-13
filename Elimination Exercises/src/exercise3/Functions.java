@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Functions {
 	public static int[] eliminateValue(int[] array, int input) {
+		Arrays.sort(array);
 		int index = Arrays.binarySearch(array, 0);
 		if(index >= 0) {
 			System.arraycopy(array, index + 1, array, index, array.length - index - 1);
