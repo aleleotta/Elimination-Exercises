@@ -4,7 +4,12 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		int array[] = new int[20];
 		Scanner sc = new Scanner(System.in);
+		for(int index = 0; index < array.length; index++) {
+			array[index] = (int)(Math.random() * 10);
+		}
+		System.out.print("Array: " + Arrays.toString(array));
 		sc.close();
 	}
 }
