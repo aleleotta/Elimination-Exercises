@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class Functions {
 	public static int[] eliminateValue(int[] array, int input) {
-		for(int index = 0; index < array.length; index++) {
-			int value = array[index];
+		int index = Arrays.binarySearch(array, 0);
+		if(index >= 0) {
 			System.arraycopy(array, index + 1, array, index, array.length - index - 1);
 			array = Arrays.copyOf(array, array.length - 1);
-		}
+			}
 		return array;
 	}
 }

@@ -1,24 +1,45 @@
 package exercise3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		int array[] = new int[20];
-		String option;
+		String option = "A";
+		int value;
 		Scanner sc = new Scanner(System.in);
 		for(int index = 0; index < array.length; index++) {
 			array[index] = (int) (Math.random() * 100);
 		}
-		while (option == "c" || option == "C") {
+		Arrays.sort(array);
+		System.out.print("Array: " + Arrays.toString(array));
+		boolean out=false;
+		while (!out) {
+			System.out.print("\n\nOptions:\n"
+					+ "A: Show current array.\n"
+					+ "B: Eliminate every instance of a value from the array.\n"
+					+ "C: Terminate the program.\n\n"
+					+ "Please select an option: ");
 			option = sc.next();
 			switch(option) {
-			case "a", "A":
-			case "b", "B":
+			case "a", "A": //To show array.
+				System.out.print("Array: " + Arrays.toString(array));
+				break;
+			case "b", "B": //To eliminate certain value selected by the user.
+				System.out.print("Introduce a value that you would like to eliminate from the array: ");
+				value = sc.nextInt();
+				array = Functions.eliminateValue(array, value);
+				break;
+			case "c","C": 
+				out=true;
+				break;
 			default:
 				System.out.println("Please introduce a valid option.");
+				break;
 			}
 		}
+		System.out.println("\n\n\nProgram terminated.");
 		sc.close();
 	}
 }
