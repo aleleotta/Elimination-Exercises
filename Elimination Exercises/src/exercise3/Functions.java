@@ -1,6 +1,16 @@
 package exercise3;
 
+import java.util.Arrays;
+
 public class Functions {
+	public static int[] eliminateValue(int[] array, int input) {
+		for(int index = 0; index < array.length; index++) {
+			int value = array[index];
+			System.arraycopy(array, index + 1, array, index, array.length - index - 1);
+			array = Arrays.copyOf(array, array.length - 1);
+		}
+		return array;
+	}
 }
 /*Crea un programa que cree un array de 10 enteros y luego muestre el siguiente menú con distintas opciones:
 
