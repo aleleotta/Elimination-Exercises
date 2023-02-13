@@ -4,7 +4,21 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
+		int array[] = new int[20];
+		String option;
 		Scanner sc = new Scanner(System.in);
+		for(int index = 0; index < array.length; index++) {
+			array[index] = (int) (Math.random() * 100);
+		}
+		while (option == "c" || option == "C") {
+			option = sc.next();
+			switch(option) {
+			case "a", "A":
+			case "b", "B":
+			default:
+				System.out.println("Please introduce a valid option.");
+			}
+		}
 		sc.close();
 	}
 }
