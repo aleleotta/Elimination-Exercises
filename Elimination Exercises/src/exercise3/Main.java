@@ -14,8 +14,8 @@ public class Main {
 		}
 		Arrays.sort(array);
 		System.out.print("Array: " + Arrays.toString(array));
-		boolean out=false;
-		while (!out) {
+		boolean termination = false;
+		while (!termination) {
 			System.out.print("\n\nOptions:\n"
 					+ "A: Show current array.\n"
 					+ "B: Eliminate every instance of a value from the array.\n"
@@ -32,7 +32,7 @@ public class Main {
 				array = Functions.eliminateValue(array, value);
 				break;
 			case "c","C": 
-				out=true;
+				termination=true;
 				break;
 			default:
 				System.out.println("Please introduce a valid option.");
